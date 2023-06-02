@@ -84,10 +84,10 @@ ProductRoute.get('/',async(req,res)=>{
 ProductRoute.get('/:id',async(req,res)=>{
     const {id} = req.params;
     try {
-        const product = await ProductModel.findById({_id:id})
-        res.send(product)
+        const product = await ProductModel.find({_id:id})
+         res.send(product)
     } catch (error) {
-        res.send({err:error})
+        res.send(error)
     }
 })
 
